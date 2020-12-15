@@ -1,143 +1,46 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Spinner</title>
-    <style type="text/css">
-        .m-spinner {
-            border: 1px solid #EAE8E8;
-            border-radius: 1px;
-            display: inline-block;
-            overflow: hidden;
-        }
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <title>Shape Shifter</title>
+    <link rel="stylesheet" href="css/site.min.css">
+  </head>
+  <body>
+  
+    <canvas class="canvas"></canvas>
 
-        .m-spinner a {
-            float: left;
-            width: .6rem;
-            height: .6rem;
-            line-height: .62rem;
-            text-align: center;
-            font-weight: bold;
-            color: #666;
-            letter-spacing: 0;
-        }
+    <div class="ui" style="display: none;">
+      <input class="ui-input" type="text" />
+      <span class="ui-return">↵</span>
+    </div>
 
-        .m-spinner a:after {
-            color: #777;
-            font-size: .18rem;
-        }
+    <div class="overlay">
 
-        .m-spinner input {
-            letter-spacing: 0;
-            float: left;
-            width: .85rem;
-            height: .6rem;
-            line-height: 2.7;
-            text-align: center;
-            color: #666;
-            border: none;
-            font-size: .26rem;
-        }
-    </style>
 
-<body>
-    <section class="g-flexview">
+      <div class="tabs">
+        <div class="tabs-labels"><span class="tabs-label">Commands</span><span class="tabs-label">Info</span><span class="tabs-label">Share</span></div>
 
-        <header class="m-navbar">
-            <a href="../index.html" class="navbar-item"><i class="back-ico"></i></a>
-            <div class="navbar-center"><span class="navbar-title">Spinner</span></div>
-        </header>
+        <div class="tabs-panels">
+          <ul class="tabs-panel commands">
+            <li class="commands-item"><span class="commands-item-title">Text</span><span class="commands-item-info" data-demo="Hello :)">Type anything</span><span class="commands-item-action">Demo</span></li>
+            <li class="commands-item"><span class="commands-item-title">Countdown</span><span class="commands-item-info" data-demo="#countdown 10">#countdown<span class="commands-item-mode">number</span></span><span class="commands-item-action">Demo</span></li>
+            <li class="commands-item"><span class="commands-item-title">Icon</span><span class="commands-item-info" data-demo="#icon thumbs-up">#icon<span class="commands-item-mode">name</span>&nbsp;(using <a href="https://fortawesome.github.io/Font-Awesome/#icons-new" target="_blank">Font Awesome</a>)</span><span class="commands-item-action">Demo</span></li>
+            <li class="commands-item"><span class="commands-item-title">Time</span><span class="commands-item-info" data-demo="#time">#time</span><span class="commands-item-action">Demo</span></li>
+            <li class="commands-item"><span class="commands-item-title">Rectangle</span><span class="commands-item-info" data-demo="#rectangle 30x15">#rectangle<span class="commands-item-mode">width x height</span></span><span class="commands-item-action">Demo</span></li>
+            <li class="commands-item"><span class="commands-item-title">Circle</span><span class="commands-item-info" data-demo="#circle 25">#circle<span class="commands-item-mode">diameter</span></span><span class="commands-item-action">Demo</span></li>
 
-        <section class="g-scrollview">
+            <li class="commands-item commands-item--gap"><span class="commands-item-title">Animate</span><span class="commands-item-info" data-demo="The time is|#time|#countdown 3|#icon thumbs-up"><span class="commands-item-mode">command1</span>&nbsp;|<span class="commands-item-mode">command2</span></span><span class="commands-item-action">Demo</span></li>
+          </ul>
 
-            <aside class="demo-tip">
-                <p>Spinner 支持 Data API 和 Javascript API方式调用；</p>
-                <p>1. 支持长按快速加减；</p>
-                <p>2. 目前暂不支持小数加减；</p>
-            </aside>
+          
+      </div>
+    </div>
+    
+    </div>
 
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">Javascript API调用（设置最大值为75，累计值为3）</span>
-                <span class="m-spinner" id="J_Quantity">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
-
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">Data API调用（设置最小值为6，累计值为3）</span>
-                <span class="m-spinner"
-                    data-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del', min: 6, unit: 3}">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
-
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">不设置最大值和累计值，默认累计值为1</span>
-                <span class="m-spinner" data-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del'}">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
-
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">设置默认值为15（累计值为5，默认值与累计值成倍数关系）</span>
-                <span class="m-spinner" data-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del', unit: 5}">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" value="15" placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
-
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">禁止修改（设置文本框readonly或者disabled即可）</span>
-                <span class="m-spinner" data-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del'}">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" readonly placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
-
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">禁用长按快速加减（设置参数longpress为false即可）</span>
-                <span class="m-spinner"
-                    data-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del', longpress: false}">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
-
-        </section>
-
-    </section>
-    <script src="./js/jquery-1.11.3.min.js"></script>
-    <script src="./js/spinner.js"></script>
-    <script>
-        !function () {
-            $('#J_Quantity').spinner({
-                input: '.J_Input',
-                add: '.J_Add',
-                minus: '.J_Del',
-                unit: function () {
-                    return 3;
-                },
-                max: function () {
-                    return (1 + 2 + 3 + 4 + 5) * 5;
-                },
-                callback: function (value, $ele) {
-                    // $ele 当前文本框[jQuery对象]
-                    // $ele.css('background', '#FF5E53');
-                    console.log('值：' + value);
-                }
-            });
-        }();
-    </script>
-</body>
-
+    <script src="js/shape-shifter.js"></script>
+  </body>
 </html>
