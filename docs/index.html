@@ -1,143 +1,225 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Spinner</title>
-    <style type="text/css">
-        .m-spinner {
-            border: 1px solid #EAE8E8;
-            border-radius: 1px;
-            display: inline-block;
-            overflow: hidden;
-        }
-
-        .m-spinner a {
-            float: left;
-            width: .6rem;
-            height: .6rem;
-            line-height: .62rem;
-            text-align: center;
-            font-weight: bold;
-            color: #666;
-            letter-spacing: 0;
-        }
-
-        .m-spinner a:after {
-            color: #777;
-            font-size: .18rem;
-        }
-
-        .m-spinner input {
-            letter-spacing: 0;
-            float: left;
-            width: .85rem;
-            height: .6rem;
-            line-height: 2.7;
-            text-align: center;
-            color: #666;
-            border: none;
-            font-size: .26rem;
-        }
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>520</title>
+  <link rel="icon" href="520.svg" />
+  <link type="text/css" rel="stylesheet" href="520/default.css">
+  <script type="text/javascript" src="520/jquery.min.js"></script>
+  <script type="text/javascript" src="520/jscex.min.js"></script>
+  <script type="text/javascript" src="520/jscex-parser.js"></script>
+  <script type="text/javascript" src="520/jscex-jit.js"></script>
+  <script type="text/javascript" src="520/jscex-builderbase.min.js"></script>
+  <script type="text/javascript" src="520/jscex-async.min.js"></script>
+  <script type="text/javascript" src="520/jscex-async-powerpack.min.js"></script>
+  <script type="text/javascript" src="520/functions.js" charset="utf-8"></script>
+  <script type="text/javascript" src="520/love.js" charset="utf-8"></script>
+  <style type="text/css">
+    <!--
+    .STYLE1 {
+      color: #ff5e04
+    }
+    -->
+  </style>
+</head>
 
 <body>
-    <section class="g-flexview">
+  <audio autoplay="autopaly">
+    <source src="520.mp3" type="audio/mp3" />
+  </audio>
+  <div id="main">
+    <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(Chrome)或者火狐(Firefox)浏览器，或者其他游览器的最新版本。</div>
+    <div id="wrap">
+      <div id="text">
+        <div id="code">
+          <font color="#FF0000"> <span class="say">渡的过山河星辰，淌不过你的一笑一颦</span><br>
+            <span class="say"> </span><br>
+            <span class="say"> 经丘寻壑不及你，尾生抱柱也无悔意</span><br>
+            <span class="say"></span><br>
+            <span class="say">傻猪猪，我爱你，虽然你说我没有给你一个仪式感的告白</span><br>
+            <span class="say"></span><br>
+            <span class="say">我知道我现在还没有多大的能力可以给你带来什么</span><br>
+            <span class="say"></span><br>
+            <span class="say">但是我会用行动证明一切！</span><br>
+            <span class="say"></span><br>
+            <span class="say">我们会有更好的未来！</span><br>
+            <span class="say"></span><br>
+            <span class="say"> 不要忘记了，我可是下了订单，说好了要养你一辈子的呀</span><br>
+            <span class="say"></span><br>
+            <span class="say"> 我们的路还很长，一起努力走下去，为了我们更好的未来！</span><br>
+            <span class="say"></span><br>
+            <span class="say"></span><br>
+            <span class="say"><span class="space"></span> --- 爱你的猪猪 --- </span> </font>
+          </p>
+        </div>
+      </div>
+      <div id="clock-box"> <span class="STYLE1"></span>
+        <font color="#ff5e04">可爱的小猪猪，我喜欢你</font> <span class="STYLE1">已经是……</span>
+        <div id="clock"></div>
+      </div>
+      <canvas id="canvas" width="1100" height="680"></canvas>
+    </div>
+  </div>
+  <script>
+  </script>
+  <script>
+    (function () {
+      var canvas = $('#canvas');
 
-        <header class="m-navbar">
-            <a href="../index.html" class="navbar-item"><i class="back-ico"></i></a>
-            <div class="navbar-center"><span class="navbar-title">Spinner</span></div>
-        </header>
+      if (!canvas[0].getContext) {
+        $("#error").show();
+        return false;
+      }
 
-        <section class="g-scrollview">
+      var width = canvas.width();
+      var height = canvas.height();
+      canvas.attr("width", width);
+      canvas.attr("height", height);
+      var opts = {
+        seed: {
+          x: width / 2 - 20,
+          color: "rgb(190, 26, 37)",
+          scale: 2
+        },
+        branch: [
+          [535, 680, 570, 250, 500, 200, 30, 100, [
+            [540, 500, 455, 417, 340, 400, 13, 100, [
+              [450, 435, 434, 430, 394, 395, 2, 40]
+            ]],
+            [550, 445, 600, 356, 680, 345, 12, 100, [
+              [578, 400, 648, 409, 661, 426, 3, 80]
+            ]],
+            [539, 281, 537, 248, 534, 217, 3, 40],
+            [546, 397, 413, 247, 328, 244, 9, 80, [
+              [427, 286, 383, 253, 371, 205, 2, 40],
+              [498, 345, 435, 315, 395, 330, 4, 60]
+            ]],
+            [546, 357, 608, 252, 678, 221, 6, 100, [
+              [590, 293, 646, 277, 648, 271, 2, 80]
+            ]]
+          ]]
+        ],
+        bloom: {
+          num: 700,
+          width: 1080,
+          height: 650,
+        },
+        footer: {
+          width: 1200,
+          height: 5,
+          speed: 10,
+        }
+      }
 
-            <aside class="demo-tip">
-                <p>Spinner 支持 Data API 和 Javascript API方式调用；</p>
-                <p>1. 支持长按快速加减；</p>
-                <p>2. 目前暂不支持小数加减；</p>
-            </aside>
+      var tree = new Tree(canvas[0], width, height, opts);
+      var seed = tree.seed;
+      var foot = tree.footer;
+      var hold = 1;
 
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">Javascript API调用（设置最大值为75，累计值为3）</span>
-                <span class="m-spinner" id="J_Quantity">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
+      canvas.click(function (e) {
+        var offset = canvas.offset(), x, y;
+        x = e.pageX - offset.left;
+        y = e.pageY - offset.top;
+        if (seed.hover(x, y)) {
+          hold = 0;
+          canvas.unbind("click");
+          canvas.unbind("mousemove");
+          canvas.removeClass('hand');
+        }
+      }).mousemove(function (e) {
+        var offset = canvas.offset(), x, y;
+        x = e.pageX - offset.left;
+        y = e.pageY - offset.top;
+        canvas.toggleClass('hand', seed.hover(x, y));
+      });
 
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">Data API调用（设置最小值为6，累计值为3）</span>
-                <span class="m-spinner"
-                    data-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del', min: 6, unit: 3}">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
+      var seedAnimate = eval(Jscex.compile("async", function () {
+        seed.draw();
+        while (hold) {
+          $await(Jscex.Async.sleep(10));
+        }
+        while (seed.canScale()) {
+          seed.scale(0.95);
+          $await(Jscex.Async.sleep(10));
+        }
+        while (seed.canMove()) {
+          seed.move(0, 2);
+          foot.draw();
+          $await(Jscex.Async.sleep(10));
+        }
+      }));
 
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">不设置最大值和累计值，默认累计值为1</span>
-                <span class="m-spinner" data-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del'}">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
+      var growAnimate = eval(Jscex.compile("async", function () {
+        do {
+          tree.grow();
+          $await(Jscex.Async.sleep(10));
+        } while (tree.canGrow());
+      }));
 
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">设置默认值为15（累计值为5，默认值与累计值成倍数关系）</span>
-                <span class="m-spinner" data-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del', unit: 5}">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" value="15" placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
+      var flowAnimate = eval(Jscex.compile("async", function () {
+        do {
+          tree.flower(2);
+          $await(Jscex.Async.sleep(10));
+        } while (tree.canFlower());
+      }));
 
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">禁止修改（设置文本框readonly或者disabled即可）</span>
-                <span class="m-spinner" data-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del'}">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" readonly placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
+      var moveAnimate = eval(Jscex.compile("async", function () {
+        tree.snapshot("p1", 240, 0, 610, 680);
+        while (tree.move("p1", 500, 0)) {
+          foot.draw();
+          $await(Jscex.Async.sleep(10));
+        }
+        foot.draw();
+        tree.snapshot("p2", 500, 0, 610, 680);
 
-            <div class="demo-spinner demo-small-pitch">
-                <span class="demo-spinner-title">禁用长按快速加减（设置参数longpress为false即可）</span>
-                <span class="m-spinner"
-                    data-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del', longpress: false}">
-                    <a href="javascript:;" class="J_Del">-</a>
-                    <input type="text" class="J_Input" placeholder="" />
-                    <a href="javascript:;" class="J_Add">+</a>
-                </span>
-            </div>
+        // 会有闪烁不得意这样做, (＞﹏＜)
+        canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+        canvas.css("background", "#ffe");
+        $await(Jscex.Async.sleep(300));
+        canvas.css("background", "none");
+      }));
 
-        </section>
+      var jumpAnimate = eval(Jscex.compile("async", function () {
+        var ctx = tree.ctx;
+        while (true) {
+          tree.ctx.clearRect(0, 0, width, height);
+          tree.jump();
+          foot.draw();
+          $await(Jscex.Async.sleep(25));
+        }
+      }));
 
-    </section>
-    <script src="./js/jquery-1.11.3.min.js"></script>
-    <script src="./js/spinner.js"></script>
-    <script>
-        !function () {
-            $('#J_Quantity').spinner({
-                input: '.J_Input',
-                add: '.J_Add',
-                minus: '.J_Del',
-                unit: function () {
-                    return 3;
-                },
-                max: function () {
-                    return (1 + 2 + 3 + 4 + 5) * 5;
-                },
-                callback: function (value, $ele) {
-                    // $ele 当前文本框[jQuery对象]
-                    // $ele.css('background', '#FF5E53');
-                    console.log('值：' + value);
-                }
-            });
-        }();
-    </script>
+      var textAnimate = eval(Jscex.compile("async", function () {
+        var together = new Date();
+        together.setFullYear(2020, 2, 27); 			//时间年月日
+        together.setHours(16);						//小时	
+        together.setMinutes(53);					//分钟
+        together.setSeconds(0);					//秒前一位
+        together.setMilliseconds(2);				//秒第二位
+
+        $("#code").show().typewriter();
+        $("#clock-box").fadeIn(500);
+        while (true) {
+          timeElapse(together);
+          $await(Jscex.Async.sleep(1000));
+        }
+      }));
+
+      var runAsync = eval(Jscex.compile("async", function () {
+        $await(seedAnimate());
+        $await(growAnimate());
+        $await(flowAnimate());
+        $await(moveAnimate());
+
+        textAnimate().start();
+
+        $await(jumpAnimate());
+      }));
+
+      runAsync().start();
+    })();
+  </script>
 </body>
 
 </html>
